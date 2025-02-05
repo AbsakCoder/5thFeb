@@ -24,21 +24,125 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Powering the Future of Energy</h1>
-      <p>Your trusted partner in oil exploration, refining, and sustainable energy solutions.</p>
-      <a href="about.html" class="cta-button">Learn More</a>
+    <div class="hero-slider">
+      <div class="slide active" style="background-image: url('assets/images/hero1.jpg');">
+        <div class="hero-content">
+          <h1>Powering the Future of Energy</h1>
+          <p>Your trusted partner in oil exploration, refining, and sustainable energy solutions.</p>
+          <a href="about.html" class="cta-button">Learn More</a>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('assets/images/hero2.jpg');">
+        <div class="hero-content">
+          <h1>Innovating for a Sustainable Tomorrow</h1>
+          <p>Committed to reducing carbon emissions and promoting eco-friendly operations.</p>
+          <a href="services.html" class="cta-button">Our Services</a>
+        </div>
+      </div>
     </div>
-    <img src="assets/images/hero.jpg" alt="Oil Rig" class="hero-image">
+    <div class="slider-controls">
+      <button class="prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
   </section>
 
+  <!-- Key Features Section -->
+  <section class="features">
+    <h2>Why Choose Us?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="fas fa-oil-can"></i>
+        <h3>Oil Exploration & Drilling</h3>
+        <p>Advanced techniques for efficient and safe drilling operations.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-industry"></i>
+        <h3>Refining & Processing</h3>
+        <p>State-of-the-art facilities ensuring high-quality output.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Sustainability Practices</h3>
+        <p>Initiatives to reduce carbon footprint and promote eco-friendly operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial active">
+        <p>"Petroleum Firm has been instrumental in helping us achieve our energy goals. Their expertise is unmatched!"</p>
+        <h4>- John Doe, CEO of EnergyCorp</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Their commitment to sustainability aligns perfectly with our vision for the future."</p>
+        <h4>- Jane Smith, Director at GreenEnergy</h4>
+      </div>
+    </div>
+    <div class="testimonial-controls">
+      <button class="prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; Dev By AbsakCoder All rights reserved.</p>
+    <p>&copy; Dev by AbsakCoder. All rights reserved.</p>
     <div class="social-icons">
       <a href="#"><i class="fab fa-linkedin"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
   </footer>
+
+  <!-- JavaScript for Slider -->
+  <script>
+    // Hero Slider
+    const heroSlides = document.querySelectorAll('.hero-slider .slide');
+    const heroPrev = document.querySelector('.hero-slider .prev');
+    const heroNext = document.querySelector('.hero-slider .next');
+    let heroIndex = 0;
+
+    function updateHeroSlider() {
+      heroSlides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === heroIndex);
+      });
+    }
+
+    heroPrev.addEventListener('click', () => {
+      heroIndex = (heroIndex > 0) ? heroIndex - 1 : heroSlides.length - 1;
+      updateHeroSlider();
+    });
+
+    heroNext.addEventListener('click', () => {
+      heroIndex = (heroIndex < heroSlides.length - 1) ? heroIndex + 1 : 0;
+      updateHeroSlider();
+    });
+
+    // Testimonial Slider
+    const testimonials = document.querySelectorAll('.testimonial-slider .testimonial');
+    const testimonialPrev = document.querySelector('.testimonial-slider .prev');
+    const testimonialNext = document.querySelector('.testimonial-slider .next');
+    let testimonialIndex = 0;
+
+    function updateTestimonialSlider() {
+      testimonials.forEach((testimonial, idx) => {
+        testimonial.classList.toggle('active', idx === testimonialIndex);
+      });
+    }
+
+    testimonialPrev.addEventListener('click', () => {
+      testimonialIndex = (testimonialIndex > 0) ? testimonialIndex - 1 : testimonials.length - 1;
+      updateTestimonialSlider();
+    });
+
+    testimonialNext.addEventListener('click', () => {
+      testimonialIndex = (testimonialIndex < testimonials.length - 1) ? testimonialIndex + 1 : 0;
+      updateTestimonialSlider();
+    });
+  </script>
 </body>
 </html>
