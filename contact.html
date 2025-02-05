@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Petroleum Firm</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <header>
     <nav>
-      <ul>
+      <div class="logo">
+        <h1>Petroleum Firm</h1>
+      </div>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="services.html">Services</a></li>
@@ -21,22 +26,48 @@
 
   <section class="contact">
     <h2>Contact Us</h2>
-    <form action="#" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="#" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          
+          <button type="submit" class="cta-button">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Energy Lane, Houston, TX 77001</p>
+        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+        <p><i class="fas fa-envelope"></i> info@petroleumfirm.com</p>
+
+        <!-- Google Maps Embed -->
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.777729123456!2d-95.3632715847864!3d29.76042678202047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4e30f0c5b%3A0x964bbfc7f4e2e0b8!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1698765432109!5m2!1sen!2sus" 
+                  width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; Dev by AbsakCoder. All rights reserved.</p>
+    <p>&copy; 2023 Petroleum Firm. All rights reserved.</p>
     <div class="social-icons">
-      <a href="#"><img src="assets/icons/linkedin.png" alt="LinkedIn"></a>
-      <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
   </footer>
 </body>
